@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: seake-journal
+    env: python
+    buildCommand: ''
+    startCommand: gunicorn new.wsgi:application
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: new.settings
+      - key: PYTHON_VERSION
+        value: 3.11
